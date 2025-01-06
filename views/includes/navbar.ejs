@@ -1,0 +1,85 @@
+
+<nav class="border-bottom bg-body-light">
+  <div class="company-name-logo">
+    <a class="fa-compass " href="/listings"><i class="fa-brands fa-squarespace company-logo"></i></a>
+    <a class="fa-compass" href="/listings">
+      <h2 class="company-name">LivingOra</h2>
+    </a>
+  </div>
+
+  <div class="search search-large">
+    <form class="d-flex" role="search" name="search" action="/listings/property/place" method="GET">
+      <input class="form-control  search-input" type="search" placeholder="Search destinations"
+        name="destination" />
+      <button class="btn search-btn" type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i>Search
+      </button>
+    </form>
+  </div>
+
+  <div class="search search-medium">
+    <form class="d-flex" role="search" name="search" action="/listings/property/place" method="GET">
+      <input class="form-control search-input " type="search" placeholder="Search destinations"
+        name="destination" />
+      <button class="btn search-btn" type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
+  </div>
+
+  <div class="nav-content">
+    <ul>
+      <li><a class="nav-link" href="/listings">Explore</a></li>
+      <li><a class="nav-link" href="/listings/new">Add new Listings</a></li>
+
+      <% if(!currentUser){ %>
+        <li>
+          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+        </li>
+        <li>
+          <a class="nav-link" href="/login"><b>Login</b></a>
+        </li>
+        <%}%>
+          <% if(currentUser){ %>
+            <li>
+              <a class="nav-link" href="/logout"><b>logout</b></a>
+            </li>
+            <%}%>
+    </ul>
+    
+  </div>
+
+  <div class="nav-content-sidebar border-bottom ">
+    <ul>
+      <li><a class="nav-link" href="/listings">Explore</a></li>
+      <li><a class="nav-link" href="/listings/new">Add new Listings</a></li>
+
+      <% if(!currentUser){ %>
+        <li>
+          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+        </li>
+        <li>
+          <a class="nav-link" href="/login"><b>Login</b></a>
+        </li>
+        <%}%>
+          <% if(currentUser){ %>
+            <li>
+              <a class="nav-link" href="/logout"><b>logout</b></a>
+            </li>
+            <%}%>
+    </ul>
+    
+  </div>
+  <div class="menu-icon">
+    <label id="icon"><i class="fa-solid fa-bars"></i></label>
+  </div>
+  
+</nav>
+
+<script>
+  menuicon = document.querySelector(".menu-icon");
+  menuicon.addEventListener("click", () =>{
+    const sidebar = document.querySelector(".nav-content-sidebar");
+    sidebar.classList.toggle("show");
+  });
+</script>
