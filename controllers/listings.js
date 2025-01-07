@@ -78,17 +78,22 @@ module.exports.deleteListing = async(req,res) => {
 
 module.exports.categoryListing = async(req,res) => {
     let {categoryvalue} = req.params;
+    categoryvalue = categoryvalue.replace("-"," ");
     const listings = await Listing.find({category: categoryvalue});
     res.render("listings/search.ejs",{listings});
-    //res.send("working");
 };
 
 module.exports.searchListing = async(req,res) => {
     let destination = req.query.destination;
+    if(destination.toLowerCase() === "iconic cities"){
+        destination = destination.toLowerCase();
+        destination = destination.replace("ies","y");
+    }
     let listings = await Listing.find({
         $or: [
             {country: { $regex: destination, $options: 'i' }},
             {category: {$regex: destination, $options: 'i'}},
+            {location: {$regex: destination,$options: 'i'}},
         
         ]
     }); 
