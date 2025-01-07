@@ -329,6 +329,16 @@ nav{
     }
 }
 
+@media (max-width: 767.20px){
+    .review{
+        margin-left: 0 !important;
+    }
+    .all-review{
+        padding-left: .7rem;
+        padding-right: .7rem;
+    }
+}
+
 @media (max-width: 500px){
     .company-name{
         display: none;
