@@ -344,3 +344,9 @@ nav{
         display: none;
     }
 }
+
+@media (max-width: 370px){
+    .company-name-logo{
+        margin-left: 0.3rem;
+    }
+}
