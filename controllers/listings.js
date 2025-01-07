@@ -85,6 +85,12 @@ module.exports.categoryListing = async(req,res) => {
 
 module.exports.searchListing = async(req,res) => {
     let destination = req.query.destination;
-    let listings = await Listing.find({country: { $regex: destination, $options: 'i' }}); 
+    let listings = await Listing.find({
+        $or: [
+            {country: { $regex: destination, $options: 'i' }},
+            {category: {$regex: destination, $options: 'i'}},
+        
+        ]
+    }); 
     res.render("listings/search.ejs",{listings});
 };
