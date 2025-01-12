@@ -39,6 +39,18 @@ nav{
     background-color: white;
 }
 
+.user-icon{
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 25%;
+    border: 1px solid rgba(0,0,0,0.2) ;
+    padding: 0.25rem;
+}
+
+.user-icon:hover{
+    box-shadow: 1px 1px 5px grey;
+}
+
 .onclickuser ul li{
     list-style: none;
 }
