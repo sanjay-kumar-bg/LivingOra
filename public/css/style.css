@@ -347,6 +347,14 @@ nav{
 
 @media (max-width: 370px){
     .company-name-logo{
+        margin-left: 0.5rem;
+        margin-right: 0.3rem;
+    }
+    .search-btn{
+        margin-left: 0.2rem;
+    }
+    .menu-icon{
         margin-left: 0.3rem;
+        margin-right: 0.5rem;
     }
 }
