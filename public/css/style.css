@@ -39,6 +39,40 @@ nav{
     background-color: white;
 }
 
+.onclickuser ul li{
+    list-style: none;
+}
+.onclickuser{
+    display: flex;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+    width: 20vw;
+    z-index: 999;
+    position: absolute;
+    top: 100%;
+    right: 2%;
+    background-color: white;
+    border: 0.5px solid rgba(0,0,0,0.2);
+    box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.2);
+    border-radius: 1rem;
+    display: none;
+    
+}
+.onclickuser ul{
+    margin: 0;
+    padding: 0;
+}
+
+.onclickuser ul li{
+    margin: 0.5rem 0 0.5rem 0;
+}
+.onclickuser ul li:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+
+.onclickuser.visible{
+    display: block;
+}
+
 .container-fluid a{
     text-decoration: none;
 }

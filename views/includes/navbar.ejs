@@ -1,5 +1,5 @@
 
-<nav class="border-bottom bg-body-light">
+<nav class="border-bottom bg-body-light sticky-top">
   <div class="company-name-logo">
     <a class="fa-compass " href="/listings"><i class="fa-brands fa-squarespace company-logo"></i></a>
     <a class="fa-compass" href="/listings">
@@ -31,20 +31,9 @@
     <ul>
       <li><a class="nav-link" href="/listings">Explore</a></li>
       <li><a class="nav-link" href="/listings/new">Add new Listings</a></li>
-
-      <% if(!currentUser){ %>
-        <li>
-          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
-        </li>
-        <li>
-          <a class="nav-link" href="/login"><b>Login</b></a>
-        </li>
-        <%}%>
-          <% if(currentUser){ %>
-            <li>
-              <a class="nav-link" href="/logout"><b>logout</b></a>
-            </li>
-            <%}%>
+      <li class="user-icon" >
+        <i class="fa-regular fa-circle-user"></i>
+      </li>
     </ul>
     
   </div>
@@ -70,6 +59,25 @@
     </ul>
     
   </div>
+
+  <div class="onclickuser">
+    <ul>
+    <% if(!currentUser){ %>
+      <li>
+          <a class="nav-link" href="/signup"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign Up</b></a>
+      <li>
+        <a class="nav-link" href="/login"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login</b></a>
+      </li>
+      <%}%>
+        <% if(currentUser){ %>
+          <li>
+            <a class="nav-link" href="/logout"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logout</b></a>
+          </li>
+        <%}%>
+    </ul>
+  </div>
+
+
   <div class="menu-icon">
     <label id="icon"><i class="fa-solid fa-bars"></i></label>
   </div>
@@ -81,5 +89,11 @@
   menuicon.addEventListener("click", () =>{
     const sidebar = document.querySelector(".nav-content-sidebar");
     sidebar.classList.toggle("show");
+  });
+
+  userIcon = document.querySelector(".user-icon");
+  userIcon.addEventListener("click", () => {
+    const userToggle = document.querySelector(".onclickuser");
+    userToggle.classList.toggle("visible")
   });
 </script>
