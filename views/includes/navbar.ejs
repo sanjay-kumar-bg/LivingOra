@@ -33,7 +33,7 @@
       <li><a class="nav-link" href="/listings/new">Add new Listings</a></li>
       <li class="user-icon" >
         <% if(currentUser){ %>
-          <% if(!(currentUser.image == null || currentUser.image == undefined)){ %> 
+          <% if(!(currentUser.image.url == null || currentUser.image.url == undefined)){ %> 
             <img src="<%= currentUser.image.url %>" alt="Listing_image">
             <%} else {%>
                 <i class="fa-regular fa-circle-user"></i>
