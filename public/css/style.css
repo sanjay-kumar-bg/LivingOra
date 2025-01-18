@@ -45,6 +45,14 @@ nav{
     border-radius: 25%;
     border: 1px solid rgba(0,0,0,0.2) ;
     padding: 0.25rem;
+    display: flex;
+    justify-items: center;
+}
+
+.user-icon img{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
 }
 
 .user-icon:hover{
@@ -305,7 +313,7 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* position: relative; */
+
 }
 
 .profile-container{
