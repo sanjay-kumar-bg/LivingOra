@@ -2,9 +2,15 @@
 
 <body>
     <div class="row mt-3 offset-3 col-6">
+       <% if (user.image.url){ %>
+            <div class="profile-icon-container">
+                <img src="<%= user.image.url %>" alt="Listing_image">
+            </div>
+            <% } else {%>
         <div class="profile-icon-container">
-            <img src="<%= user.image.url %>" alt="Listing_image">
+            <i class="fa-regular fa-user profile-icon"></i>
         </div>
+        <% } %>
         
             <form novalidate class="needs-validation" enctype="multipart/form-data" action="/profile/<%= user._id %>/edit?_method=put" method="POST">
                 <br>
