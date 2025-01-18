@@ -61,6 +61,9 @@
         <%}%>
           <% if(currentUser){ %>
             <li>
+              <a class="nav-link" href="/profile/<%=currentUser._id %>"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Profile</b></a>
+            </li>
+            <li>
               <a class="nav-link" href="/logout"><b>logout</b></a>
             </li>
             <%}%>
@@ -78,6 +81,9 @@
       </li>
       <%}%>
         <% if(currentUser){ %>
+          <li>
+            <a class="nav-link" href="/profile/<%=currentUser._id %>"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Profile</b></a>
+          </li>
           <li>
             <a class="nav-link" href="/logout"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logout</b></a>
           </li>
