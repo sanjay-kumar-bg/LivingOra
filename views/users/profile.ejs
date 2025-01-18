@@ -1,0 +1,25 @@
+<% layout("layouts/boilerplate") %>
+<body>
+    <div class="profile">
+        <div class="profile-container">
+            
+                <% if (user.image){ %>
+                    <div class="profile-icon-container">
+                        <img src="<%= user.image.url %>" alt="Listing_image">
+                    </div>
+                    <% } else {%>
+                <div class="profile-icon-container">
+                    <i class="fa-regular fa-user profile-icon"></i>
+                </div>
+                <% } %>
+                <h3>Name: <%= user.username %></h3>
+                <h5>Email: <%= user.email %></h5>
+                <form action="/profile/<%= user._id %>/edit" method="GET">
+                    <button class="btn btn-primary mt-3">Edit</button>
+                </form>
+
+        </div>
+        
+    </div>
+    
+</body>

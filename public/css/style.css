@@ -296,6 +296,44 @@ nav{
 .nav-content-sidebar{
     display: none;
 }
+
+.profile{
+    margin: 1rem 0 1rem 0;
+    background-color: #fe423d;
+    height: 75vh;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+}
+
+.profile-container{
+    background-color: white;
+    border-radius: 2rem;
+    height: 50vh;
+    width: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 5px 5px rgba(0,0,0,0.2);
+}
+
+.profile-icon{
+    font-size: 7rem;
+}
+
+.edit-profile{
+    align-items: center;
+}
+
+.profile-icon-container img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+}
+
 @media(max-width: 991.20px){
     .menu-icon{
         display: block;

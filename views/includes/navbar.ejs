@@ -32,7 +32,15 @@
       <li><a class="nav-link" href="/listings">Explore</a></li>
       <li><a class="nav-link" href="/listings/new">Add new Listings</a></li>
       <li class="user-icon" >
-        <i class="fa-regular fa-circle-user"></i>
+        <% if(currentUser){ %>
+          <% if(currentUser.image){ %> 
+            <img src="<%= currentUser.image.url %>" alt="Listing_image">
+            <%} else {%>
+                <i class="fa-regular fa-circle-user"></i>
+             <%}%>
+        <%} else {%>
+          <i class="fa-regular fa-circle-user"></i>
+          <%}%>
       </li>
     </ul>
     

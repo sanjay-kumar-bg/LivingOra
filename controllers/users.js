@@ -43,3 +43,41 @@ module.exports.logout = (req, res, next) => {
       res.redirect("/listings");
     });
 };
+
+module.exports.profile = async (req,res,next) => {
+  let{id} = req.params;
+  let user = await User.findById(id);
+  
+  res.render("users/profile.ejs",{user});
+};
+
+module.exports.renderEditForm = async (req,res,next) => {
+  let{id} = req.params;
+  let user = await User.findById(id);
+  res.render("users/profileedit.ejs",{user});
+};
+
+module.exports.profileUpdate = async (req, res, next) => {
+  try {
+    let { id } = req.params; 
+    let user = await User.findById(id);
+
+    if (!user) {
+      return res.status(404).send("User not found");
+    }
+
+    if (req.file) {
+      let url = req.file.path;
+      let filename = req.file.filename;
+
+      user.image = { url, filename };
+      await user.save();
+    }
+
+    await User.findByIdAndUpdate(id, { ...req.body.profile });
+
+    res.redirect(`/profile/${id}`);
+  } catch (err) {
+    next(err);
+  }
+};

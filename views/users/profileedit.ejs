@@ -1,0 +1,30 @@
+<% layout("layouts/boilerplate") %>
+
+<body>
+    <div class="row mt-3 offset-3 col-6">
+        <div class="profile-icon-container">
+            <img src="<%= user.image.url %>" alt="Listing_image">
+        </div>
+        
+            <form novalidate class="needs-validation" enctype="multipart/form-data" action="/profile/<%= user._id %>/edit?_method=put" method="POST">
+                <br>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload New Image</label>
+                    <input name="profile[image]"  type="file" class="form-control"/>
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input name="profile[username]" type="text" class="form-control" id="username" value="<%= user.username %>"
+                        required />
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input name="profile[email]" type="email" class="form-control" id="email" value="<%=user.email%>"
+                        required />
+                </div>
+                <button class="btn btn-primary mt-3">Edit</button>
+            </form>
+        
+        
+    </div>
+</body>
